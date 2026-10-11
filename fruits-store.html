@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Fruits Store - Order Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="fruits-style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-apple-alt"></i>
+                <span>Fresh Fruits</span>
+            </div>
+            
+            <nav class="nav">
+                <a href="#home">Home</a>
+                <a href="#products">Products</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search fruits...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <a href="index.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Fresh & Organic Fruits</h1>
+                <p>Get farm-fresh fruits delivered to your doorstep. 100% natural, handpicked daily.</p>
+                <button class="btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
+                    Shop Now <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=600&h=600&fit=crop" alt="Fresh Fruits">
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <div class="category-filters">
+                <button class="category-btn active" data-category="all">All Fruits</button>
+                <button class="category-btn" data-category="tropical">Tropical</button>
+                <button class="category-btn" data-category="citrus">Citrus</button>
+                <button class="category-btn" data-category="berries">Berries</button>
+                <button class="category-btn" data-category="seasonal">Seasonal</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Our Fresh Products</h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>100% Organic</h3>
+                    <p>All our fruits are grown without pesticides and chemicals</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-truck"></i>
+                    <h3>Fast Delivery</h3>
+                    <p>Same day delivery available for orders before 2 PM</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Quality Guarantee</h3>
+                    <p>100% money back if you're not satisfied with quality</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-tags"></i>
+                    <h3>Best Prices</h3>
+                    <p>Competitive prices with regular discounts and offers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+91 8088046932</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>naveendevihosur107@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Haveri, Karnataka, India</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Fresh Fruits Store. Demo Project by Naveen ND</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content cart-modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-shopping-cart"></i> Shopping Cart</h2>
+                <button class="close-btn" id="closeCartBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="cartItems" class="cart-items">
+                    <!-- Cart items will be loaded here -->
+                </div>
+                <div class="cart-empty" id="cartEmpty">
+                    <i class="fas fa-shopping-basket"></i>
+                    <p>Your cart is empty</p>
+                    <button class="btn-primary" onclick="document.getElementById('cartModal').classList.remove('active')">
+                        Continue Shopping
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span class="total-amount" id="totalAmount">₹0.00</span>
+                </div>
+                <button class="btn-checkout" id="checkoutBtn">
+                    Proceed to Checkout <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content checkout-modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-credit-card"></i> Checkout</h2>
+                <button class="close-btn" id="closeCheckoutBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="checkoutForm" class="checkout-form">
+                    <h3>Delivery Information</h3>
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" id="customerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" id="customerPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="customerEmail">
+                    </div>
+                    <div class="form-group">
+                        <label>Delivery Address *</label>
+                        <textarea id="customerAddress" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>City *</label>
+                        <input type="text" id="customerCity" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Pincode *</label>
+                        <input type="text" id="customerPincode" required>
+                    </div>
+                    
+                    <h3>Payment Method</h3>
+                    <div class="payment-options">
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="cod" checked>
+                            <span>Cash on Delivery</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="online">
+                            <span>Online Payment (UPI/Card)</span>
+                        </label>
+                    </div>
+                    
+                    <div class="order-summary">
+                        <h3>Order Summary</h3>
+                        <div id="checkoutItems"></div>
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="checkoutSubtotal">₹0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Delivery:</span>
+                            <span>₹40.00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total:</span>
+                            <span id="checkoutTotal">₹0.00</span>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-checkout btn-full">
+                        Place Order <i class="fas fa-check"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content success-modal">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Order Placed Successfully!</h2>
+            <p>Your order <strong id="orderNumber"></strong> has been confirmed.</p>
+            <p>We'll deliver your fresh fruits within 24 hours.</p>
+            <div class="success-actions">
+                <button class="btn-primary" onclick="location.reload()">
+                    Continue Shopping
+                </button>
+                <button class="btn-secondary" id="viewOrderBtn">
+                    View Order Details
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Details Modal -->
+    <div class="modal" id="orderDetailsModal">
+        <div class="modal-content order-details-modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-receipt"></i> Order Details</h2>
+                <button class="close-btn" id="closeOrderDetailsBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="orderDetailsContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="fruits-script.js"></script>
+</body>
+</html>

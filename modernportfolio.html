@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Portfolio - Project Demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="portfolio-style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-briefcase"></i>
+                <span>MyPortfolio</span>
+            </div>
+            <nav>
+                <a href="#hero">Home</a>
+                <a href="#about">About</a>
+                <a href="#work">Work</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="glitch" data-text="Creative Developer">Creative Developer</h1>
+            <p class="subtitle">Building digital experiences that matter</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-target="50">0</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="100">0</span>
+                    <span class="stat-label">Clients</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="5">0</span>
+                    <span class="stat-label">Years</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="floating-card card-1">
+                <i class="fas fa-code"></i>
+            </div>
+            <div class="floating-card card-2">
+                <i class="fas fa-paint-brush"></i>
+            </div>
+            <div class="floating-card card-3">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About This Project</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Modern Design</h3>
+                    <p>Clean, minimalist interface with smooth animations and transitions</p>
+                </div>
+                <div class="about-card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Fully Responsive</h3>
+                    <p>Optimized for all devices from mobile to desktop</p>
+                </div>
+                <div class="about-card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Performance</h3>
+                    <p>Fast loading with optimized code and assets</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Showcase -->
+    <section id="work" class="work">
+        <div class="container">
+            <h2 class="section-title">Featured Work</h2>
+            <div class="work-grid">
+                <div class="work-item" data-category="web">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop" alt="Project 1">
+                        <div class="work-overlay">
+                            <h3>E-Commerce Platform</h3>
+                            <p>React • Node.js • MongoDB</p>
+                            <button class="view-btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-item" data-category="design">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop" alt="Project 2">
+                        <div class="work-overlay">
+                            <h3>Brand Identity</h3>
+                            <p>UI/UX • Branding • Design</p>
+                            <button class="view-btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-item" data-category="web">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Project 3">
+                        <div class="work-overlay">
+                            <h3>Analytics Dashboard</h3>
+                            <p>Vue.js • Charts • API</p>
+                            <button class="view-btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <form id="contactForm" class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="name" required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required>
+                        <label for="email">Your Email</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="subject" required>
+                    <label for="subject">Subject</label>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" rows="5" required></textarea>
+                    <label for="message">Your Message</label>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <span>Send Message</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+            <div id="formMessage" class="form-message"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Modern Portfolio. Demo Project by Naveen ND</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="portfolio-script.js"></script>
+</body>
+</html>
